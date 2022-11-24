@@ -83,48 +83,53 @@ Ej:
 # print(New_Vec)
 
 
-print('-----------4--------------')
-def Factorial(numero):
-    '''
-    Esta función devuelve el factorial del número pasado como parámetro.
-    En caso de que no sea de tipo entero y/o sea menor que 0, debe retornar nulo.
-    Recibe un argumento:
-        numero: Será el número con el que se calcule el factorial
-    Ej:
-        Factorial(4) debe retornar 24
-        Factorial(-2) debe retornar nulo
-        Factorial(0) debe retornar 1
-    '''
-    #Tu código aca:
-    if numero < 0 or type(numero) != int:
-      return None
-    if (numero > 1):
-        numero = numero * Factorial(numero - 1)
-    return numero
-
-resultado = Factorial(0)
-print(resultado)
-
-
-# print('-----------5--------------')
-# def ListaPrimos(desde, hasta):
+# print('-----------4--------------')
+# def Factorial(numero):
 #     '''
-#     Esta función devuelve una lista con los números primos entre los valores "desde" y "hasta"
-#     pasados como parámetro, siendo ambos inclusivos.
-#     En caso de que alguno de los parámetros no sea de tipo entero y/o no sea mayor a cero, debe retornar nulo.
-#     En caso de que el segundo parámetro sea mayor al primero, pero ambos mayores que cero,
-#     debe retornar una lista vacía.
+#     Esta función devuelve el factorial del número pasado como parámetro.
+#     En caso de que no sea de tipo entero y/o sea menor que 0, debe retornar nulo.
 #     Recibe un argumento:
-#         desde: Será el número a partir del cual se toma el rango
-#         hasta: Será el número hasta el cual se tome el rango
+#         numero: Será el número con el que se calcule el factorial
 #     Ej:
-#         ListaPrimos(7,15) debe retornar [7,11,13]
-#         ListaPrimos(100,99) debe retornar []
-#         ListaPrimos(1,7) debe retonan [1,2,3,5,7]
+#         Factorial(4) debe retornar 24
+#         Factorial(-2) debe retornar nulo
+#         Factorial(0) debe retornar 1
 #     '''
 #     #Tu código aca:
-#     es_Primo = 
-#     return 'Funcion incompleta'
+#     if numero < 0 or type(numero) != int:
+#       return None
+#     if numero == 0:
+#         return 1
+#     if (numero > 1):
+#         numero = numero * Factorial(numero - 1)
+#     return numero
+
+# resultado = Factorial(4)
+# print(resultado)
+
+
+print('-----------5--------------')
+def ListaPrimos(desde, hasta):
+    '''
+    Esta función devuelve una lista con los números primos entre los valores "desde" y "hasta"
+    pasados como parámetro, siendo ambos inclusivos.
+    En caso de que alguno de los parámetros no sea de tipo entero y/o no sea mayor a cero, debe retornar nulo.
+    En caso de que el segundo parámetro sea mayor al primero, pero ambos mayores que cero,
+    debe retornar una lista vacía.
+    Recibe un argumento:
+        desde: Será el número a partir del cual se toma el rango
+        hasta: Será el número hasta el cual se tome el rango
+    Ej:
+        ListaPrimos(7,15) debe retornar [7,11,13]
+        ListaPrimos(100,99) debe retornar []
+        ListaPrimos(1,7) debe retonan [1,2,3,5,7]
+
+        https://www.youtube.com/watch?v=0Ky_-O4GYZM
+    '''
+    #Tu código aca:
+    es_Primo = []
+    
+    return 'Funcion incompleta'
 
 
 # print('-----------6--------------')
