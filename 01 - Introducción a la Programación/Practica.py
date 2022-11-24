@@ -43,20 +43,20 @@
 # print(resultado2)
 
 
-print('-----------3--------------')
-def ListaDeListas(lista):
-    '''
-    Esta función recibe una lista, que puede contener elementos que a su vez sean listas y
-    devuelve esos elementos por separado en una lista única. 
-    En caso de que el parámetro no sea de tipo lista, debe retornar nulo.
-    Recibe un argumento:
-        lista: La lista que puede contener otras listas y se convierte a una 
-        lista de elementos únicos o no iterables.
-    Ej:
-        ListaDeListas([1,2,['a','b'],[10]]) debe retornar [1,2,'a','b',10]
-        ListaDeListas(108) debe retornar el valor nulo.
-        ListaDeListas([[1,2,[3]],[4]]) debe retornar [1,2,3,4]
-    '''
+# print('-----------3--------------')
+# def ListaDeListas(lista):
+'''
+Esta función recibe una lista, que puede contener elementos que a su vez sean listas y
+devuelve esos elementos por separado en una lista única. 
+En caso de que el parámetro no sea de tipo lista, debe retornar nulo.
+Recibe un argumento:
+    lista: La lista que puede contener otras listas y se convierte a una 
+    lista de elementos únicos o no iterables.
+Ej:
+    ListaDeListas([1,2,['a','b'],[10]]) debe retornar [1,2,'a','b',10]
+    ListaDeListas(108) debe retornar el valor nulo.
+    ListaDeListas([[1,2,[3]],[4]]) debe retornar [1,2,3,4]
+'''
     #Tu código aca:
 #     if type(lista) != list:
 #       return None
@@ -96,7 +96,14 @@ def Factorial(numero):
         Factorial(0) debe retornar 1
     '''
     #Tu código aca:
-    return 'Funcion incompleta'
+    if numero < 0 or type(numero) != int:
+      return None
+    if (numero > 1):
+        numero = numero * Factorial(numero - 1)
+    return numero
+
+resultado = Factorial(0)
+print(resultado)
 
 
 # print('-----------5--------------')
