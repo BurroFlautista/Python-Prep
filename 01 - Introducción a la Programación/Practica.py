@@ -1,6 +1,6 @@
 # print('Hola Mundo!')
 
-# print('-----------1--------------')
+print('-----------1--------------')
 # def ListaDivisibles(numero, tope):
 #     '''
 #     Esta función devuelve una lista ordenada de menor a mayor con los números divisibles 
@@ -26,7 +26,7 @@
 # print(resultado)
 
 
-# print('-----------2--------------')
+print('-----------2--------------')
 # def Exponente(numero, exponente):
 #     '''
 #     Esta función devuelve el resultado de elevar el parámetro "numero" al parámetro "exponente"
@@ -43,38 +43,39 @@
 # print(resultado2)
 
 
-# print('-----------3--------------')
+print('-----------3--------------')
 # def ListaDeListas(lista):
-'''
-Esta función recibe una lista, que puede contener elementos que a su vez sean listas y
-devuelve esos elementos por separado en una lista única. 
-En caso de que el parámetro no sea de tipo lista, debe retornar nulo.
-Recibe un argumento:
-    lista: La lista que puede contener otras listas y se convierte a una 
-    lista de elementos únicos o no iterables.
-Ej:
-    ListaDeListas([1,2,['a','b'],[10]]) debe retornar [1,2,'a','b',10]
-    ListaDeListas(108) debe retornar el valor nulo.
-    ListaDeListas([[1,2,[3]],[4]]) debe retornar [1,2,3,4]
-'''
-    #Tu código aca:
+#     '''
+#     Esta función recibe una lista, que puede contener elementos que a su vez sean listas y
+#     devuelve esos elementos por separado en una lista única. 
+#     En caso de que el parámetro no sea de tipo lista, debe retornar nulo.
+#     Recibe un argumento:
+#         lista: La lista que puede contener otras listas y se convierte a una 
+#         lista de elementos únicos o no iterables.
+#     Ej:
+#         ListaDeListas([1,2,['a','b'],[10]]) debe retornar [1,2,'a','b',10]
+#         ListaDeListas(108) debe retornar el valor nulo.
+#         ListaDeListas([[1,2,[3]],[4]]) debe retornar [1,2,3,4]
+#     '''
+#     # Tu código aca:
+
 #     if type(lista) != list:
 #       return None
 
-#     _ = []
+#     Result = []
 #     for e in lista:
 #       if type(e)==list:
-#         _.extend(ListaDeListas(e))
+#         Result.extend(ListaDeListas(e))
 #       else:
-#         _.append(e)
-#     return _
+#         Result.append(e)
+#     return Result
             
-# result = ListaDeListas([[1,2,[3]],[4],6])
+# result = ListaDeListas([[1,2,[3]],[4],6,['A', 'B','X']])
 # print(result)
 
 
 # New_Vec = []
-# vec = [[1,2,3], [4,5,6], [7,8,9], 'a', 'b']
+# vec = [[1,2,3], [,4,5,6], [7,8,9], 'a', 'b']
 
 # if type(vec)== list:
 #     for elem in vec: 
@@ -83,7 +84,7 @@ Ej:
 # print(New_Vec)
 
 
-# print('-----------4--------------')
+print('-----------4--------------')
 # def Factorial(numero):
 #     '''
 #     Esta función devuelve el factorial del número pasado como parámetro.
@@ -109,73 +110,114 @@ Ej:
 
 
 print('-----------5--------------')
-def ListaPrimos(desde, hasta):
-    '''
-    Esta función devuelve una lista con los números primos entre los valores "desde" y "hasta"
-    pasados como parámetro, siendo ambos inclusivos.
-    En caso de que alguno de los parámetros no sea de tipo entero y/o no sea mayor a cero, debe retornar nulo.
-    En caso de que el segundo parámetro sea mayor al primero, pero ambos mayores que cero,
-    debe retornar una lista vacía.
-    Recibe un argumento:
-        desde: Será el número a partir del cual se toma el rango
-        hasta: Será el número hasta el cual se tome el rango
-    Ej:
-        ListaPrimos(7,15) debe retornar [7,11,13]
-        ListaPrimos(100,99) debe retornar []
-        ListaPrimos(1,7) debe retonan [1,2,3,5,7]
+# def ListaPrimos(desde, hasta):
+#   '''
+#   Esta función devuelve una lista con los números primos entre los valores "desde" y "hasta"
+#   pasados como parámetro, siendo ambos inclusivos.
+#   En caso de que alguno de los parámetros no sea de tipo entero y/o no sea mayor a cero, debe retornar nulo.
+#   En caso de que el segundo parámetro sea mayor al primero, pero ambos mayores que cero,
+#   debe retornar una lista vacía.
+#   Recibe un argumento:
+#       desde: Será el número a partir del cual se toma el rango
+#       hasta: Será el número hasta el cual se tome el rango
+#   Ej:
+#       ListaPrimos(7,15) debe retornar [7,11,13]
+#       ListaPrimos(100,99) debe retornar []
+#       ListaPrimos(1,7) debe retonan [1,2,3,5,7]
 
-        https://www.youtube.com/watch?v=0Ky_-O4GYZM
+#       https://www.youtube.com/watch?v=0Ky_-O4GYZM
+#   '''
+#   #Tu código aca: 
+#   N_Primos = []
+#   if desde < 0 or hasta < 0:
+#         return N_Primos
+#   if desde < hasta:  
+#     for i in range(desde, hasta + 1):
+#       # N_Primos.append(i)
+#       contador = 2
+#       es_primo = True
+#       while es_primo and contador < i:
+#         if i % contador == 0:
+#           es_primo = False
+#         else:
+#           contador += 1
+#       if es_primo:
+#         N_Primos.append(i)
+#   else:
+#     return N_Primos  
+#   return N_Primos
+
+# resultado5 = ListaPrimos(10, 30)
+# print(resultado5)
+
+
+
+
+print('-----------6--------------')
+def ListaRepetidos(lista):
+  '''
+  Esta función recibe como parámetro una lista y devuelve una lista de tuplas donde cada 
+  tupla contiene un valor de la lista original y las veces que se repite. Los valores 
+  de la lista original no deben estar repetidos. 
+  Debe respetarse el orden original en el que aparecen los elementos.
+  En caso de que el parámetro no sea de tipo lista debe retornar nulo.
+  Recibe un argumento:
+      lista: Será la lista que se va a evaluar.
+  Ej:
+      ListaRepetidos([]) debe retornar []
+      ListaRepetidos(['hola', 'mundo', 'hola', 13, 14]), debe retornar [('hola',2),('mundo',1),(13,1),(14,1)]
+      ListaRepetidos([1,2,2,4]) debe retornar [(1,1),(2,2),(4,1)]
+  '''
+  #Tu código aca:
+  counts = {}
+  for x in lista:
+    counts[x] = counts.get(x,0) + 1
+  return [*counts.items()]
+
+result = ListaRepetidos([1,2,2,4,4,'a', 'a', 'a'])
+print(result)
+
+
+
+print('-----------7--------------')
+def ClaseVehiculo(tipo, color):
+    '''
+    Esta función devuelve un objeto instanciado de la clase Vehiculo, 
+    la cual debe tener los siguientes atributos:
+        Tipo:       Un valor dentro de los valores posibles: ['auto','camioneta','moto']
+        Color:      Un valor de tipo de dato string.
+        Velocidad:  Un valor de tipo de dato float, que debe inicializarse en cero.
+    y debe tener el siguiente método:
+        Acelerar(): Este método recibe un parámetro con el valor que debe incrementar a la
+                    propiedad Velocidad y luego retornarla.
+                    Si la propiedad Velocidad cobra un valor menor a cero, debe quedar en cero.
+                    Si la propiedad Velocidad cobra un valor mayor a cien, debe quedar en cien.
+    Recibe dos argumento:
+        tipo: Dato que se asignará al atributo Tipo del objeto de la clase Vehiculo
+        color: Dato que se asignará al atributo Color del objeto de la clase Vehiculo
+    Ej:
+        a = ClaseVehículo('auto','gris')
+        a.Acelerar(10) -> debe devolver 10
+        a.Acelerar(15) -> debe devolver 25
+        a.Acelerar(-10) -> debe devolver 15
     '''
     #Tu código aca:
-    es_Primo = []
-    
-    return 'Funcion incompleta'
+    class vehiculo(object):
+        def __init__(self, tipo, color):
+            self.tipo = tipo
+            self.color = color
+            self.velocidad = 0
 
+        def Acelerar(self, vel):
+            if vel < 0:
+                return 0
+            self.velocidad += vel
+            return self.velocidad
+    return vehiculo(tipo, color)
 
-# print('-----------6--------------')
-# def ListaRepetidos(lista):
-#     '''
-#     Esta función recibe como parámetro una lista y devuelve una lista de tuplas donde cada 
-#     tupla contiene un valor de la lista original y las veces que se repite. Los valores 
-#     de la lista original no deben estar repetidos. 
-#     Debe respetarse el orden original en el que aparecen los elementos.
-#     En caso de que el parámetro no sea de tipo lista debe retornar nulo.
-#     Recibe un argumento:
-#         lista: Será la lista que se va a evaluar.
-#     Ej:
-#         ListaRepetidos([]) debe retornar []
-#         ListaRepetidos(['hola', 'mundo', 'hola', 13, 14]) 
-#             debe retornar [('hola',2),('mundo',1),(13,1),(14,1)]
-#         ListaRepetidos([1,2,2,4]) debe retornar [(1,1),(2,2),(4,1)]
-#     '''
-#     #Tu código aca:
-#     return 'Funcion incompleta'
-
-
-# print('-----------7--------------')
-# def ClaseVehiculo(tipo, color):
-#     '''
-#     Esta función devuelve un objeto instanciado de la clase Vehiculo, 
-#     la cual debe tener los siguientes atributos:
-#         Tipo:       Un valor dentro de los valores posibles: ['auto','camioneta','moto']
-#         Color:      Un valor de tipo de dato string.
-#         Velocidad:  Un valor de tipo de dato float, que debe inicializarse en cero.
-#     y debe tener el siguiente método:
-#         Acelerar(): Este método recibe un parámetro con el valor que debe incrementar a la
-#                     propiedad Velocidad y luego retornarla.
-#                     Si la propiedad Velocidad cobra un valor menor a cero, debe quedar en cero.
-#                     Si la propiedad Velocidad cobra un valor mayor a cien, debe quedar en cien.
-#     Recibe dos argumento:
-#         tipo: Dato que se asignará al atributo Tipo del objeto de la clase Vehiculo
-#         color: Dato que se asignará al atributo Color del objeto de la clase Vehiculo
-#     Ej:
-#         a = ClaseVehículo('auto','gris')
-#         a.Acelerar(10) -> debe devolver 10
-#         a.Acelerar(15) -> debe devolver 25
-#         a.Acelerar(-10) -> debe devolver 15
-#     '''
-#     #Tu código aca:
-#     return 'Funcion incompleta'
+a = ClaseVehiculo('auto','gris')
+b = a.Acelerar(10)
+print(b)
 
 
 # print('-----------8--------------')
@@ -206,7 +248,11 @@ def ListaPrimos(desde, hasta):
 #                                                                 'clave3':[3,2,1]}
 #     '''
 #     #Tu código aca:
-#     return 'Funcion incompleta'   
+  
+
+
+
+
 
 
 '''
